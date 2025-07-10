@@ -1,0 +1,1018 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Demo API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Laporan/lahan": {
+      "post": {
+        "tags": [
+          "Laporan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Lahan"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Lahan"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Lahan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Laporan"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Laporan/polygon-image": {
+      "post": {
+        "tags": [
+          "Laporan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LahanWithImage"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LahanWithImage"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LahanWithImage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Laporan/polygon/{id_lahan}": {
+      "post": {
+        "tags": [
+          "Laporan"
+        ],
+        "parameters": [
+          {
+            "name": "id_lahan",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/KoordinatModel"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/KoordinatModel"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/KoordinatModel"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Laporan": {
+      "post": {
+        "tags": [
+          "Laporan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaporanLahan"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaporanLahan"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaporanLahan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Laporan/laporan": {
+      "post": {
+        "tags": [
+          "Laporan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaporanLahanRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaporanLahanRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LaporanLahanRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Laporan"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": { }
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": { }
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": { }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Laporan/laporan/{id_lahan}": {
+      "get": {
+        "tags": [
+          "Laporan"
+        ],
+        "parameters": [
+          {
+            "name": "id_lahan",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Laporan/laporan/{id}": {
+      "put": {
+        "tags": [
+          "Laporan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLaporanRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLaporanRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLaporanRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Laporan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Laporan/lahan/{id}": {
+      "delete": {
+        "tags": [
+          "Laporan"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Login/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Login/register": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tips": {
+      "post": {
+        "tags": [
+          "Tips"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tips"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tips"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tips"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Tips"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tips/{id}": {
+      "put": {
+        "tags": [
+          "Tips"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tips"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tips"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tips"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tips"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tips/search/{keyword}": {
+      "get": {
+        "tags": [
+          "Tips"
+        ],
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/{id}/username": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CatatanTambahan": {
+        "type": "object",
+        "properties": {
+          "id_Catatan_Tambahan": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deskripsi": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HasilPanen": {
+        "type": "object",
+        "properties": {
+          "id_Hasil_Panen": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tanggal_Panen": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total_Hasil_Panen": {
+            "type": "number",
+            "format": "double"
+          },
+          "satuan_Panen": {
+            "type": "string",
+            "nullable": true
+          },
+          "kualitas": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InputProduksi": {
+        "type": "object",
+        "properties": {
+          "id_Input_Produksi": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jenis_Pupuk": {
+            "type": "string",
+            "nullable": true
+          },
+          "jumlah_Pupuk": {
+            "type": "number",
+            "format": "double"
+          },
+          "satuan_Pupuk": {
+            "type": "string",
+            "nullable": true
+          },
+          "jumlah_Pestisida": {
+            "type": "number",
+            "format": "double"
+          },
+          "satuan_Pestisida": {
+            "type": "string",
+            "nullable": true
+          },
+          "teknik_Pengolahan_Tanah": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KegiatanPendampingan": {
+        "type": "object",
+        "properties": {
+          "id_Kegiatan_Pendampingan": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tanggal_Kunjungan": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "materi_Penyuluhan": {
+            "type": "string",
+            "nullable": true
+          },
+          "kritik_Dan_Saran": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KendalaDiLapangan": {
+        "type": "object",
+        "properties": {
+          "id_Kendala_Di_Lapangan": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deskripsi": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KoordinatModel": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "lng": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Lahan": {
+        "type": "object",
+        "properties": {
+          "nama_Lahan": {
+            "type": "string",
+            "nullable": true
+          },
+          "luas_Lahan": {
+            "type": "number",
+            "format": "double"
+          },
+          "satuan_Luas": {
+            "type": "string",
+            "nullable": true
+          },
+          "koordinat": {
+            "type": "string",
+            "nullable": true
+          },
+          "centroid_Lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "centroid_Lng": {
+            "type": "number",
+            "format": "double"
+          },
+          "id_Users": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LahanWithImage": {
+        "type": "object",
+        "properties": {
+          "nama_Lahan": {
+            "type": "string",
+            "nullable": true
+          },
+          "luas_Lahan": {
+            "type": "number",
+            "format": "double"
+          },
+          "satuan_Luas": {
+            "type": "string",
+            "nullable": true
+          },
+          "koordinat": {
+            "type": "string",
+            "nullable": true
+          },
+          "centroid_Lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "centroid_Lng": {
+            "type": "number",
+            "format": "double"
+          },
+          "id_Users": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "polygon_Img": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LaporanGambar": {
+        "type": "object",
+        "properties": {
+          "id_Gambar": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "url_Gambar": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LaporanLahan": {
+        "type": "object",
+        "properties": {
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tanggal_Laporan": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LaporanLahanRequest": {
+        "type": "object",
+        "properties": {
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasilPanen": {
+            "$ref": "#/components/schemas/HasilPanen"
+          },
+          "musimTanam": {
+            "$ref": "#/components/schemas/MusimTanam"
+          },
+          "pendampingan": {
+            "$ref": "#/components/schemas/KegiatanPendampingan"
+          },
+          "kendala": {
+            "$ref": "#/components/schemas/KendalaDiLapangan"
+          },
+          "catatan": {
+            "$ref": "#/components/schemas/CatatanTambahan"
+          },
+          "inputProduksi": {
+            "$ref": "#/components/schemas/InputProduksi"
+          },
+          "gambar": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LaporanGambar"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MusimTanam": {
+        "type": "object",
+        "properties": {
+          "id_Musim_Tanam": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tanggal_Mulai_Tanam": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "jenis_Tanaman": {
+            "type": "string",
+            "nullable": true
+          },
+          "sumber_Benih": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Laporan_Lahan": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tips": {
+        "type": "object",
+        "properties": {
+          "id_Tips": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tanggal_Tips": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "judul": {
+            "type": "string",
+            "nullable": true
+          },
+          "deskripsi": {
+            "type": "string",
+            "nullable": true
+          },
+          "gambar": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_Users": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateLaporanRequest": {
+        "type": "object",
+        "properties": {
+          "id_Laporan": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasilPanen": {
+            "$ref": "#/components/schemas/HasilPanen"
+          },
+          "musimTanam": {
+            "$ref": "#/components/schemas/MusimTanam"
+          },
+          "kegiatanPendampingan": {
+            "$ref": "#/components/schemas/KegiatanPendampingan"
+          },
+          "inputProduksi": {
+            "$ref": "#/components/schemas/InputProduksi"
+          },
+          "kendalaDiLapngan": {
+            "$ref": "#/components/schemas/KendalaDiLapangan"
+          },
+          "catatanTambahan": {
+            "$ref": "#/components/schemas/CatatanTambahan"
+          },
+          "laporanGambar": {
+            "$ref": "#/components/schemas/LaporanGambar"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Please enter a valid token",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

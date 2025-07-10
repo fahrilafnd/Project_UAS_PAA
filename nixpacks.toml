@@ -1,0 +1,14 @@
+[variables]
+NIXPACKS_DOTNET_VERSION = "8.0"
+
+[phases.setup]
+nixPkgs = ["dotnet-sdk_8"]
+
+[phases.build]
+cmds = [
+  "dotnet restore",
+  "dotnet publish -c Release -o out"
+]
+
+[start]
+cmd = "dotnet out/UAS_PAA/UAS_PAA.dll"
